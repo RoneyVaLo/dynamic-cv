@@ -1,0 +1,102 @@
+{
+  "cv": {
+    "personal": {
+      "name": "Roney Alfonso Valdelomar López",
+      "title": "Junior Full Stack Developer (JavaScript / React / TypeScript)",
+      "contact": {
+        "place": "Guatuso, Costa Rica",
+        "email": "rvaldelomarlopez@gmail.com",
+        "phone": "+506 62831879",
+        "websites": [
+          {
+            "name": "LinkedIn",
+            "src": "https://www.linkedin.com/in/roney-valdelomar-l%C3%B3pez-b8269b211/"
+          },
+          { "name": "GitHub", "src": "https://github.com/RoneyVaLo/" }
+        ]
+      }
+    },
+    "profile": [
+      "Software engineer with experience in web development using ReactJS, TypeScript, JavaScript, HTML5, CSS3, and TailwindCSS, as well as knowledge of SQL databases and version control tools such as Git/GitHub. Passionate about developing innovative technological solutions, with a focus on teamwork, problem-solving, and critical thinking. Able to quickly adapt to new challenges and committed to continuous learning. Eager to contribute to agile and collaborative teams where innovation and technology generate significant impact."
+    ],
+    "technologies": {
+      "Frontend": "HTML5, CSS3, JavaScript (ES6+), TypeScript, ReactJS, TailwindCSS",
+      "Backend": "NodeJS, API Rest, C#",
+      "Databases": "PostgreSQL, SQL Server, MongoDB",
+      "Tools": "Git/GitHub, Vite, Visual Studio Code"
+    },
+    "experience": [
+      {
+        "project": "Professional Internship – Project “CTP Portal Docente” (Teacher Administration)",
+        "company": "Universidad Técnica Nacional (UTN), Costa Rica",
+        "date": "Jul 2025 - Oct 2025",
+        "description": "Development of a web-based system called CTP Teaching Portal, created as part of the professional practice for the Bachelor's Program in Software Engineering. The system was designed for the Los Chiles Technical Professional College to facilitate the academic and administrative management of the teaching staff.",
+        "tasks": [
+          "Developed the web system’s interface using ReactJS and TailwindCSS, implementing reusable components and state management.",
+          "Designed and implemented new tables and relationships in PostgreSQL, applying concepts such as primary/foreign keys and indexes.",
+          "Managed project versioning with Git/GitHub, documenting updates prior to deployment.",
+          "Collaborated with the academic staff to gather requirements and perform functional testing of the system."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "title": "Bachelor’s Degree in Software Engineering",
+        "institution": "Universidad Técnica Nacional (UTN)",
+        "year": "2025"
+      },
+      {
+        "title": "English for Work Program – Modules 1 & 2",
+        "institution": "Universidad Técnica Nacional (UTN)",
+        "year": "2024"
+      },
+      {
+        "title": "Information and Communication Technology Operator",
+        "institution": "Instituto Nacional de Aprendizaje (INA)",
+        "year": "2024"
+      },
+      {
+        "title": "Data Manipulation with SQL",
+        "institution": "Instituto Nacional de Aprendizaje (INA)",
+        "year": "2024"
+      },
+      {
+        "title": "Introduction to Cybersecurity",
+        "institution": "Cisco Networking Academy",
+        "year": "2024"
+      },
+      {
+        "title": "JavaScript Essentials 1",
+        "institution": "Cisco Networking Academy",
+        "year": "2024"
+      },
+      {
+        "title": "Python Essentials 1",
+        "institution": "Cisco Networking Academy",
+        "year": "2024"
+      }
+    ],
+    "skills": [
+      "Fast learning",
+      "Problem-solving",
+      "Continuous improvement",
+      "Digital competencies",
+      "Adaptability and flexibility",
+      "Teamwork"
+    ],
+    "languages": [
+      "Spanish: Native",
+      "English: Intermediate (B1) – Reading and technical writing"
+    ],
+    "labels": {
+      "profile": "Professional Profile",
+      "technologies": "Technologies",
+      "experience": "Professional Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "languages": "Languages",
+      "description": "Description",
+      "downloadButton": "Download PDF"
+    }
+  }
+}

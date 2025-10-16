@@ -1,0 +1,99 @@
+{
+  "cv": {
+    "personal": {
+      "name": "Roney Alfonso Valdelomar López",
+      "title": "Ingeniero de Software",
+      "contact": {
+        "place": "Guatuso, Costa Rica",
+        "email": "rvaldelomarlopez@gmail.com",
+        "phone": "+506 62831879",
+        "websites": [
+          {
+            "name": "LinkedIn",
+            "src": "https://www.linkedin.com/in/roney-valdelomar-l%C3%B3pez-b8269b211/"
+          },
+          { "name": "GitHub", "src": "https://github.com/RoneyVaLo/" }
+        ]
+      }
+    },
+    "profile": [
+      "Ingeniero de Software con una sólida formación en lenguajes de programación como Python y C#, y experiencia en desarrollo web utilizando tecnologías como HTML5, CSS3, TailwindCSS, JavaScript, ReactJS, ASP.NET Core y API Rest. Conocimientos en bases de datos SQL y manejo de herramientas de control de versiones como Git.",
+      "Apasionado por el desarrollo de soluciones tecnológicas innovadoras, con un enfoque en el trabajo en equipo, la resolución de problemas y el pensamiento crítico. Capaz de adaptarse rápidamente a nuevos desafíos y comprometido con el aprendizaje continuo. Busco aplicar mis conocimientos y habilidades en un entorno profesional para contribuir al desarrollo de proyectos de software de alto impacto."
+    ],
+    "technologies": {
+      "Frontend": "HTML, CSS, JS, ReactJS, TailwindCSS",
+      "Backend": "NodeJS, C#, API Rest",
+      "Bases de Datos": "PostgreSQL, SQL Server, MongoDB",
+      "Herramientas": "Git, Visual Studio, VSCode"
+    },
+    "experience": [
+      {
+        "project": "Práctica Profesional – Proyecto “CTP Portal Docente” (Administración Docente)",
+        "company": "Universidad Técnica Nacional (UTN), Costa Rica",
+        "date": "Jul 2025 - Oct 2025",
+        "description": "Desarrollo de un sistema web denominado CTP Portal Docente, creado como parte de la práctica profesional para el Bachillerato en Ingeniería de Software. El sistema fue diseñado para el Colegio Técnico Profesional de Los Chiles con el objetivo de facilitar la gestión académica y administrativa del personal docente.",
+        "tasks": [
+          "Se desarrolló utilizando ASP.NET Core para el backend y React.js + TailwindCSS para el frontend.",
+          "Se integró una base de datos PostgreSQL existente, añadiendo nuevas tablas para módulos de asistencia, calificaciones y gestión docente.",
+          "Se completó un prototipo funcional totalmente operativo, cumpliendo los objetivos académicos del proyecto."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "title": "Bachiller en Ingeniería de Software",
+        "institution": "Universidad Técnica Nacional (UTN)",
+        "year": "2025"
+      },
+      {
+        "title": "Programa de Inglés para el Trabajo Módulos 1 y 2",
+        "institution": "Universidad Técnica Nacional (UTN)",
+        "year": "2024"
+      },
+      {
+        "title": "Operador de Tecnologías de la Información y Comunicación",
+        "institution": "Instituto Nacional de Aprendizaje (INA)",
+        "year": "2024"
+      },
+      {
+        "title": "Manipulación de Datos con SQL",
+        "institution": "Instituto Nacional de Aprendizaje (INA)",
+        "year": "2024"
+      },
+      {
+        "title": "Introducción a la Seguridad Cibernética",
+        "institution": "Cisco Networking Academy",
+        "year": "2024"
+      },
+      {
+        "title": "JavaScript Essentials 1",
+        "institution": "Cisco Networking Academy",
+        "year": "2024"
+      },
+      {
+        "title": "Python Essentials 1",
+        "institution": "Cisco Networking Academy",
+        "year": "2024"
+      }
+    ],
+    "skills": [
+      "Aprendizaje rápido",
+      "Resolución de problemas",
+      "Mejora continua",
+      "Competencias digitales",
+      "Adaptabilidad y flexibilidad",
+      "Trabajo en equipo"
+    ],
+    "languages": ["Español: Nativo", "Inglés: Intermedio (B1)"],
+    "labels": {
+      "profile": "Perfil Profesional",
+      "technologies": "Tecnologías",
+      "experience": "Experiencia Profesional",
+      "education": "Educación",
+      "skills": "Habilidades",
+      "languages": "Idiomas",
+      "description": "Descripción",
+      "downloadButton": "Descargar PDF"
+    }
+  }
+}
