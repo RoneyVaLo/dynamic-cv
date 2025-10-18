@@ -1,7 +1,7 @@
 import React from "react";
 import BulletItem from "../components/edit/BulletItem";
 import { useNavigate } from "react-router-dom";
-import { Plus } from "lucide-react";
+import { Plus, Trash2 } from "lucide-react";
 import { useData } from "../context/useData";
 
 const ResumeEdit = () => {
@@ -34,12 +34,33 @@ const ResumeEdit = () => {
     });
   };
 
+  // Eliminar educación
+  const removeEducation = (index) =>
+    setData({
+      ...data,
+      education: education.filter((_, i) => i !== index),
+    });
+
   // 🔹 Añadir nueva habilidad directamente al contexto
   const addSkill = () => {
     setData({
       ...data,
       skills: [...(skills || []), ""],
     });
+  };
+
+  // Eliminar skill
+  const removeSkill = (index) =>
+    setData({
+      ...data,
+      skills: skills.filter((_, i) => i !== index),
+    });
+
+  // Eliminar tecnología
+  const removeTechnology = (key) => {
+    const updated = { ...technologies };
+    delete updated[key];
+    setData({ ...data, technologies: updated });
   };
 
   return (
@@ -53,6 +74,12 @@ const ResumeEdit = () => {
           <input
             type="text"
             defaultValue={personal.title}
+            onChange={(e) =>
+              setData({
+                ...data,
+                personal: { ...personal, title: e.target.value },
+              })
+            }
             className="text-md my-1 w-full text-gray-600 text-center border-2 border-slate-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors duration-200 placeholder-transparent"
           />
           <p className="text-md mb-0.5 text-gray-600">
@@ -77,8 +104,14 @@ const ResumeEdit = () => {
             {labels.profile}
           </h2>
           <textarea
-            className="leading-snug text-justify w-full border-2 border-slate-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors duration-200 placeholder-transparent px-2"
+            className="leading-snug text-justify w-full min-h-20 border-2 border-slate-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors duration-200 placeholder-transparent px-2"
             defaultValue={profile.join("\n")}
+            onChange={(e) =>
+              setData({
+                ...data,
+                profile: e.target.value.split("\n"),
+              })
+            }
             rows={Math.ceil(profile.join("\n").length / 80) || 1}
           />
         </div>
@@ -89,7 +122,7 @@ const ResumeEdit = () => {
             {labels.technologies}
           </h2>
           {Object.entries(technologies).map(([key, value]) => (
-            <p
+            <div
               key={key}
               className="mb-2.5 leading-tight text-justify flex gap-2 items-center"
             >
@@ -97,9 +130,21 @@ const ResumeEdit = () => {
               <input
                 type="text"
                 defaultValue={value}
+                onChange={(e) =>
+                  setData({
+                    ...data,
+                    technologies: { ...technologies, [key]: e.target.value },
+                  })
+                }
                 className="flex-1 border-2 border-slate-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors duration-200 placeholder-transparent px-2"
               />
-            </p>
+              <button
+                className="text-red-500 hover:text-red-700"
+                onClick={() => removeTechnology(key)}
+              >
+                <Trash2 size={18} />
+              </button>
+            </div>
           ))}
         </div>
 
@@ -138,31 +183,56 @@ const ResumeEdit = () => {
             {labels.education}
           </h2>
           {education?.map((edu, i) => (
-            <div key={i} className="mb-2">
-              <div className="inline-flex w-full">
-                <p className="font-bold mb-0.5 mr-1 leading-tight text-justify">
-                  •
-                </p>
+            <div
+              key={i}
+              className="mb-3 border border-slate-200 p-2 rounded-lg relative"
+            >
+              <div className="flex gap-2 items-center mb-2">
                 <input
                   type="text"
-                  defaultValue={edu.title}
-                  className="font-bold mb-0.5 leading-tight text-justify w-full border-2 border-slate-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors duration-200 placeholder-transparent px-2"
+                  value={edu.title}
+                  onChange={(e) => {
+                    const updated = education.map((ed, idx) =>
+                      idx === i ? { ...ed, title: e.target.value } : ed
+                    );
+                    setData({ ...data, education: updated });
+                  }}
+                  className="font-bold w-full border-2 border-slate-300 rounded-lg focus:border-blue-500 px-2"
                 />
+
+                <button
+                  className="text-red-500 hover:text-red-700"
+                  onClick={() => removeEducation(i)}
+                >
+                  <Trash2 size={18} />
+                </button>
               </div>
-              <div className="mt-2">
+
+              <div className="flex gap-2">
                 <input
                   type="text"
-                  defaultValue={edu.institution}
+                  value={edu.institution}
                   size={edu.institution.length}
-                  //   style={{ width: `${edu.institution.length}ch` }}
-                  className="text-center border-2 border-slate-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors duration-200 placeholder-transparent px-2"
+                  onChange={(e) => {
+                    const updated = education.map((ed, idx) =>
+                      idx === i ? { ...ed, institution: e.target.value } : ed
+                    );
+                    setData({ ...data, education: updated });
+                  }}
+                  className="border-2 border-slate-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors duration-200 placeholder-transparent px-2"
                 />
-                <span className="border-l border-r mx-2"></span>
+                <span className="border-l border-r mx-1"></span>
                 <input
                   type="text"
-                  defaultValue={edu.year}
+                  value={edu.year}
                   size={edu.year.toString().length}
-                  className="border-2 border-slate-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors duration-200 placeholder-transparent px-2"
+                  onChange={(e) => {
+                    const updated = education.map((ed, idx) =>
+                      idx === i ? { ...ed, year: e.target.value } : ed
+                    );
+                    setData({ ...data, education: updated });
+                  }}
+                  className="w-24 border-2 border-slate-300 rounded-lg focus:border-blue-500 px-2"
                 />
               </div>
             </div>
@@ -183,16 +253,27 @@ const ResumeEdit = () => {
             {labels.skills}
           </h2>
           {skills?.map((skill, i) => (
-            <div key={i} className="inline-flex w-full my-1">
-              <p className="font-bold mb-0.5 mr-1 leading-tight text-justify">
-                •
-              </p>
+            <div
+              key={i}
+              className="flex items-center gap-2 border border-slate-200 p-2 rounded-lg mb-2"
+            >
               <input
                 type="text"
-                defaultValue={skill}
-                size={skill.length}
-                className="text-md border-2 border-slate-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors duration-200 placeholder-transparent px-2"
+                value={skill}
+                onChange={(e) => {
+                  const updated = skills.map((s, idx) =>
+                    idx === i ? e.target.value : s
+                  );
+                  setData({ ...data, skills: updated });
+                }}
+                className="flex-1 border-2 border-slate-300 rounded-lg focus:border-blue-500 px-2"
               />
+              <button
+                className="text-red-500 hover:text-red-700"
+                onClick={() => removeSkill(i)}
+              >
+                <Trash2 size={18} />
+              </button>
             </div>
           ))}
           <div className="w-full flex justify-center mt-4">
