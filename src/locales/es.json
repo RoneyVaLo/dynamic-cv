@@ -12,7 +12,8 @@
             "name": "LinkedIn",
             "src": "https://www.linkedin.com/in/roney-valdelomar-l%C3%B3pez-b8269b211/"
           },
-          { "name": "GitHub", "src": "https://github.com/RoneyVaLo/" }
+          { "name": "GitHub", "src": "https://github.com/RoneyVaLo/" },
+          { "name": "Portfolio", "src": "https://portfolio-4r86.vercel.app/" }
         ]
       }
     },
